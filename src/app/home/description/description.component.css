@@ -1,0 +1,15 @@
+#description {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #f7f7f7;
+}
+
+#description h1 {
+  font-size: 48px;
+  color: black;
+}
+
+#description p {
+  font-size: 18px;
+  color: gray;
+}
