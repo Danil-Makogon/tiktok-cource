@@ -15,7 +15,7 @@ body {
   }
 
   .partner-section {
-    padding: 10px;
+    padding: 5px; /* Уменьшили внутренние отступы */
     flex-direction: column;
     gap: 10px; /* Расстояние между элементами */
   }

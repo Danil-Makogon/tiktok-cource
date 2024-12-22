@@ -1,18 +1,13 @@
 #description {
   text-align: center;
-  padding: 10px 10px; /* Основные отступы */
+  padding: 10px 10px; /* Уменьшили верхний и нижний отступ */
   background-color: #ffffff;
 }
 
-#description h1 {
-  font-size: 48px;
-  color: black;
-}
-
 #description img {
-  max-width: 60%; /* Логотип адаптируется под ширину контейнера */
+  max-width: 50%; /* Логотип адаптируется под ширину контейнера */
   height: auto; /* Сохраняем пропорции */
-  margin: 0 auto 10px; /* Центрируем изображение */
+  margin: 10px auto; /* Уменьшили нижний отступ */
 }
 
 #description p {
@@ -20,7 +15,7 @@
   font-size: 28px; /* Основной текст */
   color: #FF4081; /* Цвет текста */
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 10px; /* Уменьшили отступ сверху */
   font-family: 'Poppins', sans-serif;
 }
 
@@ -30,8 +25,8 @@
   justify-content: center;
   gap: 10px;
   max-width: 600px; /* Ограничиваем ширину */
-  margin: 0 auto 20px;
-  padding: 10px 0;
+  margin: 0 auto; /* Уменьшили нижний отступ */
+  padding: 0; /* Уменьшили внутренний отступ */
 }
 
 .partner-section p {
@@ -50,11 +45,12 @@
 /* Медиазапросы для адаптации */
 @media (max-width: 768px) {
   #description {
-    padding: 50px 10px;
+    padding: 20px 10px; /* Уменьшили верхний и нижний отступ */
   }
 
   #description p {
     font-size: 20px; /* Уменьшаем текст */
+    margin-top: 5px; /* Уменьшили отступ сверху */
   }
 
   .partner-section {
