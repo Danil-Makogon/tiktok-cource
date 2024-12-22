@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+/* Глобальные стили */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Медиазапросы */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Уменьшаем общий размер шрифта */
+    padding: 0; /* Убираем лишние отступы */
+  }
+
+  #description img {
+    max-width: 90%; /* Уменьшаем ширину логотипа */
+  }
+
+  .partner-section {
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px; /* Расстояние между элементами */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  #description img {
+    max-width: 80%;
+  }
+
+  .partner-section {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
