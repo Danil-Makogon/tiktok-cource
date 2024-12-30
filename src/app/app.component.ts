@@ -5,11 +5,19 @@ import {DescriptionComponent} from './home/description/description.component';
 import {AboutComponent} from './home/about/about.component';
 import {AdvantagesComponent} from './home/advantages/advantages.component';
 import {ReviewsComponent} from './home/reviews/reviews.component';
-import {ContactsComponent} from './home/contacts/contacts.component';
+import {ApplicationComponent} from './home/application/application.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, DescriptionComponent, AboutComponent, AdvantagesComponent, ReviewsComponent, ContactsComponent],
+  imports: [RouterOutlet,
+            NavbarComponent,
+            DescriptionComponent,
+            AboutComponent,
+            AdvantagesComponent,
+            ReviewsComponent,
+            ApplicationComponent,
+            ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
