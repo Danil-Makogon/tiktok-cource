@@ -1,4 +1,6 @@
-export const firebaseConfig = {
+import { FirebaseOptions } from '@angular/fire/app';
+
+export const firebaseConfig: FirebaseOptions = {
   apiKey: "AIzaSyDOMDBv1arAU--uvVHZvhWiyjZh0SOq0lI",
   authDomain: "tik-tok-49c87.firebaseapp.com",
   projectId: "tik-tok-49c87",

@@ -7,10 +7,12 @@ import {AdvantagesComponent} from './home/advantages/advantages.component';
 import {ReviewsComponent} from './home/reviews/reviews.component';
 import {ApplicationComponent} from './home/application/application.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {AngularFireModule} from '@angular/fire/compat';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,
+            AngularFireModule,
             NavbarComponent,
             DescriptionComponent,
             AboutComponent,
