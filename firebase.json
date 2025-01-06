@@ -1,20 +1,11 @@
 {
   "hosting": {
     "public": "dist/tiktok-course/browser",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "headers": [
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
       {
-        "source": "/.well-known/acme-challenge/**",
-        "headers": [
-          {
-            "key": "Content-Type",
-            "value": "text/plain"
-          }
-        ]
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }

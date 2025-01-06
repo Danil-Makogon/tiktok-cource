@@ -13,7 +13,7 @@
 #description p {
   text-align: center;
   font-size: 28px; /* Основной текст */
-  color: #FF4081; /* Цвет текста */
+  color: #333; /* Цвет текста */
   font-weight: bold;
   margin-top: 10px; /* Уменьшили отступ сверху */
   font-family: 'Poppins', sans-serif;
@@ -23,8 +23,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  max-width: 600px; /* Ограничиваем ширину */
+  gap: 40px;
+  max-width: 400px; /* Ограничиваем ширину */
   margin: 0 auto; /* Уменьшили нижний отступ */
   padding: 0; /* Уменьшили внутренний отступ */
 }
@@ -48,6 +48,12 @@
     padding: 20px 10px; /* Уменьшили верхний и нижний отступ */
   }
 
+  #description img {
+    max-width: 90%; /* Логотип адаптируется под ширину контейнера */
+    height: auto; /* Сохраняем пропорции */
+    margin: 10px auto; /* Уменьшили нижний отступ */
+  }
+
   #description p {
     font-size: 20px; /* Уменьшаем текст */
     margin-top: 5px; /* Уменьшили отступ сверху */
@@ -63,8 +69,13 @@
     text-align: center;
   }
 
-  .partner-section .tiktok-logo {
-    height: 30px; /* Уменьшаем логотип */
+  @media (max-width: 768px) {
+    .partner-section .tiktok-logo {
+      width: 100px; /* Фиксированная ширина */
+      height: auto; /* Автоматическая высота для сохранения пропорций */
+      display: block; /* Исправление возможных багов с flex */
+      margin: 0 auto; /* Центрируем логотип */
+    }
   }
 }
 
@@ -80,6 +91,51 @@
   }
 
   .partner-section .tiktok-logo {
-    height: 40px; /* Пропорциональный размер логотипа */
+    max-width: 50%; /* Адаптивный размер */
+    height: auto; /* Сохраняем пропорции */
   }
+}
+
+/* === Кнопки на ПК: правый верхний угол === */
+@media (min-width: 769px) {
+  .social-icons {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    gap: 30px;
+  }
+}
+
+/* === Кнопки на мобильных устройствах: фиксируем внизу экрана === */
+@media (max-width: 768px) {
+  .social-icons {
+    position: fixed !important; /* Гарантированно фиксируем */
+    bottom: 20px;  /* Отступ от низа */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 15px;
+    border-radius: 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999 !important;  /* Поверх всего */
+    width: auto;
+  }
+}
+
+/* === Общие стили для иконок === */
+.social-icons a {
+  display: inline-block;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
 }

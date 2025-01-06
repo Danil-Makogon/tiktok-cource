@@ -2,37 +2,3 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
-
-/* Медиазапросы */
-@media (max-width: 768px) {
-  body {
-    font-size: 14px; /* Уменьшаем общий размер шрифта */
-    padding: 0; /* Убираем лишние отступы */
-  }
-
-  #description img {
-    max-width: 90%; /* Уменьшаем ширину логотипа */
-  }
-
-  .partner-section {
-    padding: 5px; /* Уменьшили внутренние отступы */
-    flex-direction: column;
-    gap: 10px; /* Расстояние между элементами */
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  body {
-    font-size: 16px;
-  }
-
-  #description img {
-    max-width: 80%;
-  }
-
-  .partner-section {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-  }
-}
