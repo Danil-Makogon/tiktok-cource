@@ -1,0 +1,36 @@
+<section id="application">
+  <h2>Contact Us</h2>
+  <form [formGroup]="applicationForm" (ngSubmit)="onSubmit()" class="application-form">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name" type="text" placeholder="Enter your name" required />
+    </div>
+
+    <div>
+      <label for="age">Age:</label>
+      <input id="age" formControlName="age" type="number" placeholder="Enter your age" required />
+    </div>
+
+    <div>
+      <label for="tiktok">TikTok Link:</label>
+      <input id="tiktok" formControlName="tiktok" type="url" placeholder="Enter TikTok profile link" />
+    </div>
+
+    <div>
+      <label for="instagram">Instagram Link:</label>
+      <input id="instagram" formControlName="instagram" type="url" placeholder="Enter Instagram profile link" />
+    </div>
+
+    <div>
+      <label for="referral">Where did you find us?</label>
+      <input id="referral" formControlName="referral" type="text" placeholder="Enter referral source" />
+    </div>
+
+    <div>
+      <label for="contact">WhatsApp/Telegram:</label>
+      <input id="contact" formControlName="contact" type="text" placeholder="Enter your contact" required />
+    </div>
+
+    <button type="submit" [disabled]="!applicationForm.valid">Submit</button>
+  </form>
+</section>

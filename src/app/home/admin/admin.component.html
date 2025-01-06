@@ -1,0 +1,29 @@
+<section *ngIf="isAuthenticated; else loginForm">
+  <h2>Admin Panel</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>TikTok</th>
+      <th>Instagram</th>
+      <th>Referral</th>
+      <th>Contact</th>
+    </tr>
+    <tr *ngFor="let app of applications$ | async">
+      <td>{{ app.name }}</td>
+      <td>{{ app.age }}</td>
+      <td>{{ app.tiktok }}</td>
+      <td>{{ app.instagram }}</td>
+      <td>{{ app.referral }}</td>
+      <td>{{ app.contact }}</td>
+    </tr>
+  </table>
+  <button (click)="logout()">Logout</button>
+</section>
+
+<ng-template #loginForm>
+  <h2>Admin Login</h2>
+  <input type="email" [(ngModel)]="email" placeholder="Email">
+  <input type="password" [(ngModel)]="password" placeholder="Password">
+  <button (click)="login()">Login</button>
+</ng-template>

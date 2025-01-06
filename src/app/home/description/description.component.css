@@ -1,0 +1,141 @@
+#description {
+  text-align: center;
+  padding: 10px 10px; /* Уменьшили верхний и нижний отступ */
+  background-color: #ffffff;
+}
+
+#description img {
+  max-width: 50%; /* Логотип адаптируется под ширину контейнера */
+  height: auto; /* Сохраняем пропорции */
+  margin: 10px auto; /* Уменьшили нижний отступ */
+}
+
+#description p {
+  text-align: center;
+  font-size: 28px; /* Основной текст */
+  color: #333; /* Цвет текста */
+  font-weight: bold;
+  margin-top: 10px; /* Уменьшили отступ сверху */
+  font-family: 'Poppins', sans-serif;
+}
+
+.partner-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 400px; /* Ограничиваем ширину */
+  margin: 0 auto; /* Уменьшили нижний отступ */
+  padding: 0; /* Уменьшили внутренний отступ */
+}
+
+.partner-section p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FF4081;
+  margin: 0;
+}
+
+.partner-section .tiktok-logo {
+  height: 50px;
+  width: auto;
+  margin-left: 10px; /* Расстояние между текстом и логотипом */
+}
+
+/* Медиазапросы для адаптации */
+@media (max-width: 768px) {
+  #description {
+    padding: 20px 10px; /* Уменьшили верхний и нижний отступ */
+  }
+
+  #description img {
+    max-width: 90%; /* Логотип адаптируется под ширину контейнера */
+    height: auto; /* Сохраняем пропорции */
+    margin: 10px auto; /* Уменьшили нижний отступ */
+  }
+
+  #description p {
+    font-size: 20px; /* Уменьшаем текст */
+    margin-top: 5px; /* Уменьшили отступ сверху */
+  }
+
+  .partner-section {
+    flex-direction: column; /* Элементы выстраиваются вертикально */
+    gap: 5px;
+  }
+
+  .partner-section p {
+    font-size: 18px; /* Уменьшаем размер текста */
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .partner-section .tiktok-logo {
+      width: 100px; /* Фиксированная ширина */
+      height: auto; /* Автоматическая высота для сохранения пропорций */
+      display: block; /* Исправление возможных багов с flex */
+      margin: 0 auto; /* Центрируем логотип */
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .partner-section {
+    flex-direction: row; /* Элементы выстраиваются в линию */
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  #description p {
+    font-size: 24px;
+  }
+
+  .partner-section .tiktok-logo {
+    max-width: 50%; /* Адаптивный размер */
+    height: auto; /* Сохраняем пропорции */
+  }
+}
+
+/* === Кнопки на ПК: правый верхний угол === */
+@media (min-width: 769px) {
+  .social-icons {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    gap: 30px;
+  }
+}
+
+/* === Кнопки на мобильных устройствах: фиксируем внизу экрана === */
+@media (max-width: 768px) {
+  .social-icons {
+    position: fixed !important; /* Гарантированно фиксируем */
+    bottom: 20px;  /* Отступ от низа */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 15px;
+    border-radius: 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999 !important;  /* Поверх всего */
+    width: auto;
+  }
+}
+
+/* === Общие стили для иконок === */
+.social-icons a {
+  display: inline-block;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
