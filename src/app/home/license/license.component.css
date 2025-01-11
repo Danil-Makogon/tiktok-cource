@@ -1,0 +1,9 @@
+.license-footer {
+  background-color: #fef4f8; /* Чёрный фон */
+  color: rgb(16, 16, 16); /* Серый текст */
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+}
