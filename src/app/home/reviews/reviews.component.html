@@ -1,7 +1,18 @@
 <section id="reviews">
-  <h2>Our Streamers:</h2>
-  <div class="review">
-    <p>"I've been working with NPTT Agency for about 2 months..."</p>
-    <span>Sonya, live streamer</span>
+  <h2>OUR STREAMERS:</h2>
+  <div class="carousel-container">
+    <div class="carousel"
+         #carousel
+         (mousedown)="startDrag($event)"
+         (mousemove)="drag($event)"
+         (mouseup)="endDrag()"
+         (mouseleave)="endDrag()"
+         (touchstart)="startTouch($event)"
+         (touchmove)="moveTouch($event)"
+         (touchend)="endTouch()">
+      <div class="phone-frame" *ngFor="let gif of gifs">
+        <img [src]="gif" alt="Streamer GIF" draggable="false">
+      </div>
+    </div>
   </div>
 </section>
