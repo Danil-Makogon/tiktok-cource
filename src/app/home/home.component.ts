@@ -5,6 +5,7 @@ import {ApplicationComponent} from './application/application.component';
 import {DescriptionComponent} from './description/description.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {ReviewsComponent} from './reviews/reviews.component';
+import {NumbersComponent} from './numbers/numbers.component';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,8 @@ import {ReviewsComponent} from './reviews/reviews.component';
     ApplicationComponent,
     DescriptionComponent,
     NavbarComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    NumbersComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
