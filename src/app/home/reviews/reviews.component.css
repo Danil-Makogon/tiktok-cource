@@ -22,7 +22,6 @@
   user-select: none;
   scrollbar-width: none;
   white-space: nowrap;
-  scroll-behavior: smooth; /* Добавляем плавную прокрутку */
 }
 
 .carousel::-webkit-scrollbar {

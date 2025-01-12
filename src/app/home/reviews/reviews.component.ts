@@ -29,54 +29,46 @@ export class ReviewsComponent implements AfterViewInit {
     this.carousel.nativeElement.scrollLeft = 0;
   }
 
-  startDrag(event: MouseEvent) {
+  startDrag(event: MouseEvent | TouchEvent) {
     this.isDragging = true;
-    this.startX = event.pageX - this.carousel.nativeElement.offsetLeft;
+    this.startX = this.getEventX(event) - this.carousel.nativeElement.offsetLeft;
     this.scrollLeft = this.carousel.nativeElement.scrollLeft;
     this.carousel.nativeElement.style.cursor = 'grabbing';
+    this.carousel.nativeElement.style.scrollBehavior = 'auto'; // Отключаем smooth scroll
     this.stopMomentumScroll();
   }
 
-  drag(event: MouseEvent) {
+  drag(event: MouseEvent | TouchEvent) {
     if (!this.isDragging) return;
-    const x = event.pageX - this.carousel.nativeElement.offsetLeft;
-    const walk = (x - this.startX) * 1.5;
+    const x = this.getEventX(event) - this.carousel.nativeElement.offsetLeft;
+    const walk = (x - this.startX) * 2.5; // Увеличиваем множитель скорости
     this.carousel.nativeElement.scrollLeft = this.scrollLeft - walk;
-    this.velocity = walk; // Сохраняем скорость движения
+    this.velocity = walk;
   }
 
   endDrag() {
     this.isDragging = false;
     this.carousel.nativeElement.style.cursor = 'grab';
+    this.carousel.nativeElement.style.scrollBehavior = 'smooth'; // Включаем smooth scroll после окончания свайпа
     this.startMomentumScroll();
   }
 
   startTouch(event: TouchEvent) {
-    this.isDragging = true;
-    this.startX = event.touches[0].pageX - this.carousel.nativeElement.offsetLeft;
-    this.scrollLeft = this.carousel.nativeElement.scrollLeft;
-    this.velocity = 0;
-    this.stopMomentumScroll();
+    this.startDrag(event);
   }
 
   moveTouch(event: TouchEvent) {
-    if (!this.isDragging) return;
-    const x = event.touches[0].pageX - this.carousel.nativeElement.offsetLeft;
-    const walk = (x - this.startX) * 1.5;
-    this.carousel.nativeElement.scrollLeft = this.scrollLeft - walk;
-    this.velocity = walk; // Сохраняем скорость движения
+    this.drag(event);
   }
 
   endTouch() {
-    this.isDragging = false;
-    this.startMomentumScroll();
+    this.endDrag();
   }
 
-  // Функция для инерционной прокрутки
   startMomentumScroll() {
     if (Math.abs(this.velocity) < 1) return;
 
-    this.velocity *= 0.95; // Постепенно уменьшаем скорость
+    this.velocity *= 0.95;
     this.carousel.nativeElement.scrollLeft -= this.velocity;
 
     this.animationFrame = requestAnimationFrame(() => this.startMomentumScroll());
@@ -87,5 +79,9 @@ export class ReviewsComponent implements AfterViewInit {
       cancelAnimationFrame(this.animationFrame);
       this.animationFrame = null;
     }
+  }
+
+  getEventX(event: MouseEvent | TouchEvent): number {
+    return event instanceof MouseEvent ? event.pageX : event.touches[0].pageX;
   }
 }
